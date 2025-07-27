@@ -246,3 +246,58 @@ That's all for now.
 
 I'm going to take a break.
 
+## Interlude
+
+Listen.
+
+Mathematics is just like Christianity.
+
+Mathematics is just like Islam.
+
+Anyone can be a Christian.
+
+Anyone can be a Muslim.
+
+Anyone can be a mathematician.
+
+If you want to be a mathematician, you can be a mathematician.
+
+Never let a degree or a title deceive you.
+
+99% of degrees are fake.
+
+99% of titles are fake.
+
+PhDs are fake.
+
+Bachelor degrees are fake.
+
+What's real is this...
+
+What's real is what you want.
+
+If you want to be a mathematician, you can be a mathematician.
+
+Mathematics is a tradition just like Christianity and Islam.
+
+Mathematics is a tradition just like Judaism, Christianity, and Islam.
+
+My whole life I've had a contempt for PhDs.
+
+My whole life I've had a contempt for money.
+
+My whole life I've had a contempt for false titles.
+
+What matters is being a good person.
+
+What matters is family.
+
+In my family we say, "Moral behavior is everything."
+
+In my family we say, "Family is everything."
+
+In my family we put safety first.
+
+In my family we put moral behavior first.
+
+In my family we put family first.

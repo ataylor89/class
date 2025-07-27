@@ -301,3 +301,35 @@ In my family we put safety first.
 In my family we put moral behavior first.
 
 In my family we put family first.
+
+## pi.py (introduction)
+
+The pi module is a great introduction to Taylor series.
+
+Taylor series is a subject in calculus.
+
+It's a rich and fascinating subject.
+
+I'll write a quick introduction before we go in depth.
+
+What is the reason for Taylor series? What is the purpose of Taylor series?
+
+Listen...
+
+A computer has many purposes. We can use a computer to post code on Github or write an email.
+
+A phone has many purposes. We can use a phone to make a phone call or even to listen to music.
+
+What are the purposes of Taylor series?
+
+Taylor series have many purposes.
+
+We can use a Taylor series to calculate Pi... to show that Pi is approximately 3.14159.
+
+We can use a Taylor series to calculate sin(x) and cos(x) for any angle x.
+
+We can use a Taylor series to calculate arctan(x) for any angle x.
+
+So you see that Taylor series are especially useful in trigonometry.
+
+Taylor series are also useful in calculating Pi.

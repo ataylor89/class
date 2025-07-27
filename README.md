@@ -28,3 +28,221 @@ Also, we can add more source files to the repository.
 I'm a little tired so I'm taking it easy today...
 
 We can focus on this repository and add new files to the repository.
+
+## factor.py
+
+The sympy module is not part of the Python Standard Library, so we have to download it.
+
+The Python Standard Library is a set of built-in libraries that are pre-installed.
+
+For example, the math library is pre-installed. The sys and random libraries are preinstalled.
+
+We can downlaod the sympy library by typing "pip install sympy" in Terminal.
+
+(I'm using a MacBook so I reference Terminal often.)
+
+After we install sympy, we can write the following lines in vi, or also in Python's interactive shell.
+
+    from sympy import factorint
+
+    n = 884496532433
+    factors = factorint(n)
+
+    print(factors)
+
+This code is simple, but beautiful.
+
+It teaches us about third-party libraries (like sympy).
+
+It teaches us about variables (like n and factors).
+
+It teaches us about the factorint function.
+
+In math, a function is a rule that assigns to every input exactly one output.
+
+In programming, a function is a list of instructions.
+
+A function has a return address (stored in register X30) and a return value (stored in register X0).
+
+After a function finishes, it updates the program counter to the return address stored in register X30.
+
+The return statement accomplishes this (in assembly and other languages).
+
+The calling function can get the return value from register X0.
+
+Our file factors.py does not contain a function... it is actually a script.
+
+To be more precise, it does not define a function.
+
+It's really just a four-line script.
+
+There's no need to define a function in a Python file.
+
+If you want, you can just write a script.
+
+Our script factors the number 884496532433 using the factorint function from the sympy module.
+
+Then it prints out the prime factorization of 884496532433 using the print method.
+
+The factors variable is an instance of the dict class, and it has an internal mechanism for representing itself as a string.
+
+It literally has a __repr__ method, or something like that, that gets called when passed to the print function.
+
+Now let's run the program.
+
+    % pip install sympy
+    Requirement already satisfied: sympy in ...
+    Requirement already satisfied: mpmath in ...
+
+    % python factor.py
+    {885977: 1, 998329: 1}
+
+You can see from the program output that 884496532433 = 885977 * 998329.
+
+There we go.
+
+There we have it.
+
+We were able to factor a very large number using the sympy module.
+
+You can try doing it by hand, but I don't recommend it, because it might take you a hundred years.
+
+It can literally take a hundred years to factor 884496532433 by hand, so it makes us really grateful for computers.
+
+Now does it actually take 100 years to factor 884496532433 by hand?
+
+Let's do an estimate.
+
+884,496,532,433 is approximately 900 billion.
+
+The smallest factor is 885,977 which is approximately 900,000.
+
+How many primes are there before 885977?
+
+Let's check.
+
+I just asked Google "how many prime numbers are below 885977?"
+
+Google answered 67,883.
+
+Listen.
+
+To factor this number we have to try out 67,883 primes.
+
+If we try 10 primes a day, it would take us 6,788.3 days.
+
+It's not a hundred years, but it's a very long time.
+
+It's actually 18.5980821918 years.
+
+So listen... my estimate of 100 years was off.
+
+But it could really take us years to factor this number by hand.
+
+With sympy we can factor it in less than a second.
+
+Let's check that.
+
+It's an estimate but we'll see.
+
+We are going to write a new program factor2.py which keeps track of how much time it takes.
+
+    import time
+    st = time.time()
+    from sympy import factorint
+
+    n = 884496532433
+    factors = factorint(n)
+    print(factors)
+    print("Factored 884496532433 in %f seconds" %(time.time() - st))
+
+I saved this code to a file named factor2.py. Now we can run it in Terminal.
+
+    % python factor2.py
+    {885977: 1, 998329: 1}
+    Factored 884496532433 in 0.169152 seconds
+
+There we go.
+
+It actually does take less than a second.
+
+Sometimes, when I make an estimate, it turns out to be correct.
+
+I hope you enjoyed this section.
+
+We learned about the sympy module and we also learned about the time module.
+
+Prime numbers are the foundation of RSA encryption, and if you learn RSA encryption, it will give you a whole new appreciation of prime numbers.
+
+We can talk about RSA encryption later.
+
+The basic idea is that prime numbers have special properties in modular arithmetic.
+
+Let p and q be two distinct prime numbers.
+
+Let n = p * q.
+
+Let phi be the least common multiple of p-1 and q-1, or, phi = lcm(p-1, q-1).
+
+Let e be the first integer such that 1 < e < phi and gcd(e, phi) == 1.
+
+Let d be the first integer such that 1 < d < phi and d * e == 1 (mod phi).
+
+Using these constants, we can now form an algorithm for encryption and decryption.
+
+Let m be a character in a message, like 'h' in "hello world".
+
+Let c = m^e % n.
+
+The ^ operator is exponentiation and the % operator is modulo.
+
+Then we can say...
+
+m = c^d % n.
+
+We can say that encrypt(m) = m^e % n.
+
+We can say that decrypt(c) = c^d % n.
+
+We can say that decrypt(encrypt(m)) = m.
+
+This gives us two functions, one for encrypting and one for decrypting.
+
+In order to encrypt a message, we have to know the modulus n and the encryption exponent e.
+
+In order to decrypt a message, we have to know the modulus n and the decryption exponent d.
+
+This is the basis of the RSA algorithm.
+
+The public key is a series of (n, e) tuples.
+
+The private key is a series of (n, d) tuples.
+
+If our message is "hello" and our key length is four, then...
+
+We use the first (n, e) tuple to encrypt the letter "h".
+
+We use the second (n, e) tuple to encrypt the letter "e".
+
+Third for "l".
+
+Fourth for "l".
+
+When we reach "o" we wrap around and use the first (n, e) tuple to encrypt "o".
+
+The longer our key length, the more secure our algorithm is.
+
+I like to use a key length of 1024.
+
+But it's also the case that...
+
+What really makes our algorithm secure is choosing very large values for p and q.
+
+If we choose very large values for p and q, then it's difficult to factor n, and it's difficult to derive the decryption exponent d.
+
+Well listen.
+
+That's all for now.
+
+I'm going to take a break.
+

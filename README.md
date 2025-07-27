@@ -18,3 +18,13 @@ Maybe I will add some more sections to the README later
 Today is Saturday, July 26, 2025
 
 I wish everyone a great weekend
+
+## The plan
+
+The plan for today is to explain each of the source files in this repository.
+
+Also, we can add more source files to the repository.
+
+I'm a little tired so I'm taking it easy today...
+
+We can focus on this repository and add new files to the repository.

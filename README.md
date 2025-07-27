@@ -355,3 +355,56 @@ There are many theorems in calculus that are very hard to prove, but infinitely 
 The fundamental theorem of calculus is infinitely useful. Taylor series are infinitely useful.
 
 Now that we have defined Taylor series, we can look at some examples.
+
+## An example
+
+Let's calculate sin(x) using a Taylor series.
+
+I forgot to mention... the whole theorem is that T(x) = f(x), where T(x) is the Taylor series for f(x).
+
+Now, let's begin.
+
+How do we calculate the sine of 1 radian?
+
+Well we can form a Taylor series for sin(x) and center it at x = 0, since 0 is fairly close to 1.
+
+[If it were the sine of 3 radians, we can use the fact that sin(3 radians) = sin(Pi - 3 radians).]
+
+We know that sin(0) = 0.
+
+Now we need to calculate sin'(0), sin''(0), sin'''(0), et cetera.
+
+sin'(0) = cos(0) = 1.
+
+sin''(0) = -sin(0) = 0.
+
+sin'''(0) = -cos(0) = -1.
+
+sin''''(0) = sin(0) = 0.
+
+The values cycle every four derivatives, so we can see the pattern clearly just from these examples.
+
+Let's go back to our definition of Taylor series.
+
+T(x) = f(a) + f'(a)(x - a) + f''(a)(x - a)^2 / 2! + f'''(a)(x - a)^3 / 3! + f''''(a)(x - a)^4 / 4! + ...
+
+We are using f(x) = sin(x) as our function, and our Taylor series is centered at a=0. Plugging these values in, we get...
+
+T(x) = sin(0) + sin'(0)(x - 0) + sin''(0)(x - 0)^2 / 2! + sin'''(0)(x - 0)^3 / 3! + ....
+
+We can use the pattern we obtained by looking at the first four derivatives of sin(x).
+
+T(x) = 0 + x + 0 + -x^3 / 3! + ...
+T(x) = x - x^3 / 3! + x^5 / 5! - x^7 / 7! + x^9 / 9! - x^11 / 11! + ...
+
+Now, to get the value of sine(1 radian), we just plug in 1 radian.
+
+We can truncate the series at an even number of terms to get a lower bound... and we can include one term after that to get an upper bound.
+
+T(x) = 1 - 1/3! + 1/5! - 1/7! + 1/9! - 1/11! + ...
+
+To get a good approximation, we'll use like a thousand terms.
+
+For this we need to write a Python program. We'll call it sine.py.
+
+I'm going to do that in a moment. But first, a break. I'm taking a music break. In my family we take music breaks.

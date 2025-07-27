@@ -333,3 +333,25 @@ We can use a Taylor series to calculate arctan(x) for any angle x.
 So you see that Taylor series are especially useful in trigonometry.
 
 Taylor series are also useful in calculating Pi.
+
+## What is a Taylor series?
+
+Let f(x) be an infinitely differentiable real-valued function.
+
+Then the Taylor series for f(x) centered at a is given by:
+
+T(x) = f(a) + f'(a)(x - a) + f''(a)(x - a)^2 / 2! + f'''(a)(x - a)^3 / 3! + ...
+
+It's remarkable that this is true. You can try it for f(x) = sin(x), f(x) = cos(x), f(x) = e^x, f(x) = arctan(x), and other infinitely differentiable functions.
+
+The definition of the Taylor series is a very important theorem in calculus.
+
+It's really hard to prove... I have not proven it myself.
+
+But it's infinitely useful.
+
+There are many theorems in calculus that are very hard to prove, but infinitely useful.
+
+The fundamental theorem of calculus is infinitely useful. Taylor series are infinitely useful.
+
+Now that we have defined Taylor series, we can look at some examples.

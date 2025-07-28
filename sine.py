@@ -23,6 +23,16 @@ def sin(x):
     ub = lb + x**(2*n+1) / math.factorial(2*n+1)
     return (lb, ub)
 
-x = 10
-(lb, ub) = sin(x)
-print("sin(10) is between %.20f and %.20f" %(lb, ub))
+def isinteger(x):
+    return float(x).is_integer()
+
+def test(x):
+    (lb, ub) = sin(x)
+    if isinteger(x):
+        print("sin(%d) is between %.20f and %.20f" %(x, lb, ub))
+    else:
+        print("sin(%f) is between %.20f and %.20f" %(x, lb, ub))
+
+test(1)
+test(10)
+test(1.2)

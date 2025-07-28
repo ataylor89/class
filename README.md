@@ -413,14 +413,14 @@ I'm going to do that in a moment. But first, a break. I'm taking a music break. 
 
 I wrote the following program to calculate the sine of an angle x.
 
-It turns out we don't need a thousand terms, or even a hundred terms. I think that five terms is sufficient.
+It turns out we don't need a thousand terms, or even a hundred terms. I think that six terms is sufficient.
 
 (For calculating Pi I often use a thousand terms or ten thousand terms. For sine it's different.)
 
 Here's the code to the program.
 
     import math
-    n = 5
+    n = 6
 
     def sin(x):
         lb = 0

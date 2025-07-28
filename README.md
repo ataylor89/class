@@ -408,3 +408,80 @@ To get a good approximation, we'll use like a thousand terms.
 For this we need to write a Python program. We'll call it sine.py.
 
 I'm going to do that in a moment. But first, a break. I'm taking a music break. In my family we take music breaks.
+
+## sine.py
+
+I wrote the following program to calculate the sine of an angle x.
+
+It turns out we don't need a thousand terms, or even a hundred terms. I think that five terms is sufficient.
+
+(For calculating Pi I often use a thousand terms or ten thousand terms. For sine it's different.)
+
+Here's the code to the program.
+
+    import math
+    n = 5
+
+    def sin(x):
+        lb = 0
+        for i in range(0, n):
+            if i % 2 == 0:
+                lb += x**(2*i+1) / math.factorial(2*i+1)
+            else:
+                lb -= x**(2*i+1) / math.factorial(2*i+1)
+        ub = lb + x**(2*n+1) / math.factorial(2*n+1)
+        return (lb, ub)
+
+    (lb, ub) = sin(1)
+    print("sin(1) is between %.10f and %.10f" %(lb, ub))
+
+I saved this code to a file called sine.py.
+
+I then run the program with the following command:
+
+    % python sine.py
+    sin(1) is between 0.8414709846 and 0.8414709848
+
+There we go. We were able to calculate the sine of 1 radian using a Taylor series.
+
+We used a Taylor series with six terms to get our lower bound.
+
+We used a Taylor series with seven terms to get our upper bound.
+
+We can adjust the precision by adjusting the variable n.
+
+For the program to work, the variable n has to be even.
+
+Let's actually edit the code to make sure that n is even.
+
+    import math
+
+    n = 6
+
+    if n % 2 != 0:
+        raise ValueError("n has to be even")
+
+    def sin(x):
+        lb = 0
+        for i in range(0, n):
+            if i % 2 == 0:
+                lb += x**(2*i+1) / math.factorial(2*i+1)
+            else:
+                lb -= x**(2*i+1) / math.factorial(2*i+1)
+        ub = lb + x**(2*n+1) / math.factorial(2*n+1)
+        return (lb, ub)
+
+    (lb, ub) = sin(1)
+    print("sin(1) is between %.10f and %.10f" %(lb, ub))
+
+There might be a better way of enforcing the rule that n is even...
+
+It's a design problem. I have to think about it.
+
+In our sine.py file, we calculated sin(1 rad) using a Taylor series.
+
+We used 6 terms for our lower bound and 7 terms for our upper bound.
+
+We can do the same strategy with Pi.
+
+Now it's time to revisit pi.py and explain how it works.

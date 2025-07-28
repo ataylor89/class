@@ -1,6 +1,6 @@
 import math
 
-n = 6
+n = 20
 
 if n % 2 != 0:
     raise ValueError("n has to be even")
@@ -26,9 +26,15 @@ def sin(x):
 def test(x):
     (lb, ub) = sin(x)
     if isinstance(x, int):
-        print("sin(%d) is between %.20f and %.20f" %(x, lb, ub))
+        if lb == ub:
+            print("sin(%d) = %.20f" %(x, lb))
+        else:
+            print("sin(%d) is between %.20f and %.20f" %(x, lb, ub))
     else:
-        print("sin(%f) is between %.20f and %.20f" %(x, lb, ub))
+        if lb == ub:
+            print("sin(%f) = %.20f" %(x, lb))
+        else:
+            print("sin(%f) is between %.20f and %.20f" %(x, lb, ub))
 
 test(1)
 test(10)

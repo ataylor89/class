@@ -6,6 +6,8 @@ if n % 2 != 0:
     raise ValueError("n has to be even")
 
 def sin(x):
+    if x < -math.pi/2 or x > math.pi/2:
+        raise ValueError("You have to translate x to a value within [-Pi/2, Pi/2]")
     lb = 0
     for i in range(0, n):
         if i % 2 == 0:

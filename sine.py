@@ -5,9 +5,15 @@ n = 6
 if n % 2 != 0:
     raise ValueError("n has to be even")
 
+def translate(x):
+    sign = -1 if x < 0 else 1
+    x = abs(x) % (2*math.pi)
+    if x > math.pi/2:
+        x = math.pi - x
+    return sign * x
+
 def sin(x):
-    if x < -math.pi/2 or x > math.pi/2:
-        raise ValueError("You have to translate x to a value within [-Pi/2, Pi/2]")
+    x = translate(x)
     lb = 0
     for i in range(0, n):
         if i % 2 == 0:
@@ -17,5 +23,6 @@ def sin(x):
     ub = lb + x**(2*n+1) / math.factorial(2*n+1)
     return (lb, ub)
 
-(lb, ub) = sin(1)
-print("sin(1) is between %.10f and %.10f" %(lb, ub))
+x = 10
+(lb, ub) = sin(x)
+print("sin(10) is between %.20f and %.20f" %(lb, ub))

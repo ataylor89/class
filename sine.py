@@ -6,8 +6,11 @@ if n % 2 != 0:
     raise ValueError("n has to be even")
 
 def translate(x):
-    sign = -1 if x < 0 else 1
+    sign = 1 if x > 0 else -1
     x = abs(x) % (2*math.pi)
+    if x > math.pi:
+        sign *= -1
+        x = 2*math.pi - x
     if x > math.pi/2:
         x = math.pi - x
     return sign * x

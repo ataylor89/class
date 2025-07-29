@@ -1,0 +1,5 @@
+# This calculation was performed on a m5zn.xlarge EC2 instance
+lb = 3.1415926526
+ub = 3.1415926546
+π = 3.14159265
+Calculated Pi with n=10**9 in 154.277838 seconds

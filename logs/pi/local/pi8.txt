@@ -1,0 +1,4 @@
+lb = 3.141592644
+ub = 3.141592664
+π = 3.1415926
+Calculated Pi with n=10**8 in 11.611444 seconds

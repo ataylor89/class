@@ -485,3 +485,177 @@ We used 6 terms for our lower bound and 7 terms for our upper bound.
 We can do the same strategy with Pi.
 
 Now it's time to revisit pi.py and explain how it works.
+
+## pi.py (revisited)
+
+We are revisiting our source file pi.py.
+
+Here is the code.
+
+    lb = 0
+    ub = 0
+    n = 10000
+
+    for i in range(0, n):
+        if i % 2 == 0:
+            lb += 1/(2*i+1)
+        else:
+            lb += -1/(2*i+1)
+
+    ub = lb + 1/(2*n+1)
+    lb *= 4
+    ub *= 4
+
+    print("π is between %f and %f" %(lb, ub))
+
+Calculating π for the first time was a very big moment in my life.
+
+There are many ways of calculating π... I'm not going to tell you all of them, but I think it's good to tell you this one approach.
+
+It's very hard to figure out this approach on your own, so it helps to learn it from a book or (in this case) a readme.
+
+I actually know of three ways of calculating π.
+
+In my family we say, "There's an easy way, a hard way, and a fancy way of calculating π."
+
+The approach that we take in this section is the fancy way.
+
+Using Taylor series is the fancy way.
+
+To calculate π, we can use the Taylor series for arctan(x), which is also called the arctangent series.
+
+We can use the arctangent series, and evaluate it at x=1, because we know that arctan(1) = π/4.
+
+First, we have to form the arctangent series and center it at zero.
+
+It's actually difficult to derive the arctangent series.
+
+In the sections above, we derived the Taylor series for sin(x).
+
+It is easy to calculate the derivatives of sin(x) so we were able to do this.
+
+It is difficult to calculate the derivatives of arctan(x).
+
+Even if we calculate the first derivative, it's hard to calculate the second, third, fourth derivative.
+
+I happen to know the arctangent series. It is very similar to the series for sin(x).
+
+Instead of deriving it, I will just reproduce it below.
+
+arctan(x) = x - x^3 / 3 + x^5 / 5 - x^7 / 7 + x^9 / 9 - x^11 / 11 + ...
+
+We can remember it in this way - sine without factorials.
+
+It looks very similar to the series for sin(x)... it just doesn't have factorials.
+
+So we will use this series to calculate π. 
+
+We know that arctan(1) = π/4, and we can use this equation to calculate π.
+
+How do we know that arctan(1) = π/4?
+
+Well it follows from trigonometry.
+
+We know that tan(π/4) = 1.
+
+Taking the arctangent of both sides, we get
+
+π/4 = arctan(1)
+
+We can start with this equation, and then evaluate the arctangent series at x=1 and substitute it for arctan(1).
+
+arctan(x) = x - x^3 / 3 + x^5 / 5 - x^7 / 7 + x^9 / 9 - x^11 / 11 + ...
+arctan(1) = 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...
+
+To get a lower bound for π, we can truncate the series after an even number of terms, that is, after 2n terms.
+
+To get an upper bound for π, we can truncate the series after an odd number of terms, that is, after 2n+1 terms.
+
+To get a good approximation of π, we can use a very long series... we can use 1000 terms or even 10,000 terms.
+
+That's what we do in pi.py.
+
+So we know that...
+
+π/4 = arctan(1)
+
+We know that...
+
+arctan(1) = 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...
+
+Substituting for arctan(1), we get...
+
+π/4 = 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...
+
+We can use a Python program to calculate the series on the right if we truncate it after 2n terms.
+
+This gives us a lower bound.
+
+In the same program we can calculate the series on the right if we truncate it after 2n+1 terms.
+
+This gives us an upper bound.
+
+Pi is somewhere in between the lower bound and the upper bound.
+
+If the lower bound is 3.14 something, and the upper bound is 3.14 something, we know that the first three digits are 3.14.
+
+Let's review our program.
+
+    lb = 0
+    ub = 0
+    n = 10000
+
+    for i in range(0, n):
+        if i % 2 == 0:
+            lb += 1/(2*i+1)
+        else:
+            lb += -1/(2*i+1)
+
+    ub = lb + 1/(2*n+1)
+    lb *= 4
+    ub *= 4
+
+    print("π is between %f and %f" %(lb, ub))
+
+When we set n to 10,000, we are saying that the lower bound has 10,000 terms, and the upper bound has 10,001 terms.
+
+We calculate the lower bound and the upper bound, and then issue a print statement.
+
+It's complicated, but it's also simple.
+
+It's simple because the code is short and elegant.
+
+It's complicated because it involves calculus, and all kinds of mathematics.
+
+How does it involve calculus?
+
+This is a good question, because you don't see any derivatives or integrals in the code.
+
+It involves calculus because we use calculus to form a Taylor series.
+
+We use differential calculus to form a Taylor series.
+
+Without differential calculus, we would not be able to form a Taylor series.
+
+So it uses calculus behind the scenes.
+
+I'm going to write a new file, pi2.py, which is slightly different.
+
+The key things to remember are...
+
+1. We use the arctangent series to calculate π/4
+2. We can do this because arctan(1) = π/4
+3. We evaluate the arctangent series at x=1 and substitute it into the above equation
+4. Taylor series are based on calculus because we need differential calculus to form a Taylor series
+5. It is very hard to derive the Taylor series for arctan(x), so we can just memorize it or look it up
+6. After all is done, we have to multiply the lower bound and the upper bound by 4, to get a lb and an ub for π
+
+I hope that's clear. It's a complicated subject.
+
+I spent a long time writing about it, but I will just leave this text the way it is, without editing it.
+
+Let's move onto a new file pi2.py.
+
+In pi2.py, we will use the same approach to calculating Pi, but we will try to give a single approximation instead of a lower bound and an upper bound.
+
+We did something similar with sin(x) and cos(x) in trig.py, so let's see if we can use the same technique when calculating π.

@@ -1,3 +1,4 @@
+# This calculation was performed on a c7a.xlarge EC2 instance
 lb = 3.1415926526
 ub = 3.1415926546
 π = 3.14159265

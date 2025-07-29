@@ -3,7 +3,8 @@ st = time.time()
 
 lb = 0
 ub = 0
-n = 10**7
+e = 8
+n = 10**e
 
 for i in range(0, n):
     if i % 2 == 0:
@@ -27,4 +28,4 @@ approx = float(lbs[0:k])
 print(f"lb = {lb:.{k}f}")
 print(f"ub = {ub:.{k}f}")
 print(f"π = {approx:.{k-2}f}")
-print("Calculated Pi with n=%d in %f seconds" %(n, time.time() - st))
+print("Calculated Pi with n=10**%d in %f seconds" %(e, time.time() - st))

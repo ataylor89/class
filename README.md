@@ -795,3 +795,39 @@ I'm a lifelong fan of Sigur Ros.
 I have been listening to Sigur Ros's music since high school.
 
 Thank you Sigur Ros.
+
+## Creating an account on AWS
+
+When I created an account on AWS, I had to give a root user email address and an account name.
+
+I also gave my debit card number, because it charges my debit card.
+
+It's a little hard to explain the steps for creating an account... because...
+
+If I did explain the steps, the process might change 6 months from now, or 1 year from now.
+
+I went through a process to create an account on AWS.
+
+I gave my root user email address, my acccount name, my debit card number.
+
+Eventually I finished creating an account, and I was able to log into the AWS console.
+
+It's hard to explain the process for creating an account, because I already have an account, and I'm not going to create a new account. Or at least, I don't plan to create a new account. I don't even know if it's possible to create a second account because my account is linked to my debit card. So... it's hard to explain the process for creating an account.
+
+Let's move on to the next step.
+
+I created an account a while ago, earlier this year.
+
+I actually have a signin link.
+
+The signin link looks like *.signin.aws.amazon.com/console, where * is an identifier that belongs to me.
+
+I use the signin link to log into the console.
+
+I use my account ID (or alias), my IAM username, and my password to log into the console.
+
+So first I go to the signin link, *.signin.aws.amazon.com/console.
+
+Then I use my account ID (or alias), my IAM username, and my password to log into the console.
+
+Let's talk about the AWS console.

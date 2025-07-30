@@ -3,7 +3,7 @@ st = time.time()
 import argparse
 
 def calculate(n):
-    if n <= 0 or n % 2 != 0:
+    if n < 2 or n % 2 != 0:
         raise ValueError("n has to be a positive even integer")
 
     lb = 0
@@ -42,7 +42,7 @@ def main():
 
     try:
         n = int(float(args.numberofterms))
-        assert n > 0 and n % 2 == 0
+        assert n >= 2 and n % 2 == 0
     except:
         raise ValueError("Unable to parse n as a positive even integer")
 

@@ -41,8 +41,8 @@ k -= 1
 
 approx = float(lbs[0:k])
 
-print(f"lb = {lb:.{k}f}")
-print(f"ub = {ub:.{k}f}")
+print("lb = %s" %lbs)
+print("ub = %s" %ubs)
 print(f"π = {approx:.{k-2}f}")
 print("Precision: %d digits of precision" %(k-1))
 print("Method: We used a Taylor series with 10**%d terms" %e)

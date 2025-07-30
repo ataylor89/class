@@ -1,9 +1,25 @@
 import time
 st = time.time()
 
+import argparse
+
+parser = argparse.ArgumentParser(
+        prog="pi2.py",
+        description="Calculate π using a Taylor series with n terms",
+        epilog="What's the exact value of π? Perfect integrity.")
+
+parser.add_argument("-e", "--exponent", required=True)
+parser.add_argument("-s", "--save", action="store_true")
+
+args = parser.parse_args()
+
+try:
+    e = int(args.exponent)
+except:
+    raise ValueError("Unable to parse e as an integer")
+
 lb = 0
 ub = 0
-e = 8
 n = 10**e
 
 for i in range(0, n):

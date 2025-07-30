@@ -1,5 +1,4 @@
 import time
-st = time.time()
 import argparse
 
 def calculate(n):
@@ -30,6 +29,7 @@ def calculate(n):
     return (lb, ub, approx)
 
 def main():
+    st = time.time()
     parser = argparse.ArgumentParser(
             prog="pi2.py",
             description="Calculate π using a Taylor series with n terms",

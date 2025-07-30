@@ -659,3 +659,125 @@ Let's move onto a new file pi2.py.
 In pi2.py, we will use the same approach to calculating Pi, but we will try to give a single approximation instead of a lower bound and an upper bound.
 
 We did something similar with sin(x) and cos(x) in trig.py, so let's see if we can use the same technique when calculating π.
+
+## pi2.py (introduction)
+
+In this file we calculate π using a Taylor series of n terms.
+
+We choose an exponent e and set n = 10**e.
+
+The lower bound has n terms. The upper bound has n+1 terms.
+
+The one condition is that n is even. The variable n has to be a positive even integer.
+
+Now...
+
+We have gotten very far in this file.
+
+It's also fine to skip sections and read only what you want to read.
+
+When I open a textbook, I read the pages I want to read, and I skip around.
+
+There is no need to read a textbook cover-to-cover.
+
+One of the tricks that we learn when reading a textbook is that we don't have to read a textbook cover-to-cover.
+
+We don't have to read a book cover-to-cover.
+
+We can skip to a chapter we want to read.
+
+We can skip to a page we want to read.
+
+So listen.
+
+We are going to introduce a new subject.
+
+We are going to teach cloud computing.
+
+The file pi2.py is an excellent opportunity to teach cloud computing.
+
+But there are other opportunities for teaching cloud computing.
+
+I actually have three cloud computing projects in mind.
+
+The first project is calculating Pi.
+
+When we calculate Pi, we want every digit in our approximation to be exact.
+
+The second project is generating prime numbers.
+
+We can generate the first million prime numbers.
+
+We can generate the first ten million prime numbers.
+
+If we have enough memory and disk space, we can generate the first one hundred million prime numbers.
+
+The third project is generating RSA keys, also called NED keys.
+
+The third project is RSA encryption, also called NED encryption.
+
+So I have these three projects in mind.
+
+Let's change gears and talk about cloud computing.
+
+We can run pi2.py on the cloud.
+
+It's time to give an introduction to cloud computing.
+
+We can use AWS web services to learn about cloud computing.
+
+I have a personal account on AWS web services.
+
+My monthly fee is usually pretty cheap... but sometimes it is hefty, depending on the kind of server I rent.
+
+It costs a decent amount to rent a powerful server.
+
+But we can rent a powerful server for a short time, like 1 hour or 1 day.
+
+After that we can downgrade the server to a t2.micro.
+
+AWS cloud lets us rent servers in the cloud.
+
+AWS web services lets us rent servers in the cloud.
+
+Cloud computing lets us rent servers in the cloud.
+
+You might be familiar with Netflix...
+
+Netflix lets us rent movies in the cloud.
+
+We can actually pay a monthly fee and get any movie that we want in the cloud.
+
+I actually have subscriptions to Netflix, Disney+, and Amazon Prime.
+
+I often watch Pokemon on Amazon Prime.
+
+I often watch Avatar: The Last Airbender on Netflix.
+
+I often The Legend of Korra on YouTube.
+
+So we see that...
+
+Film and television are on the cloud.
+
+We can rent films and TV shows from the cloud.
+
+We can also rent servers from the cloud.
+
+We can rent powerful servers that have a lot of CPU and a lot of memory and a lot of disk space, from the cloud.
+
+To generate the first ten million primes, it helps to have a lot of memory.
+
+To calculate the first ten digits of Pi, it helps to have a lot of CPU.
+
+So we can rent servers in the cloud... and that's the whole point of cloud computing.
+
+It's kind of like Netflix.
+
+It's a lot like Netflix, but with servers instead of movies.
+
+So let's give an introduction to Amazon Web Services.
+
+The next topic is Amazon Web Services.
+
+We can run pi2.py on AWS cloud.

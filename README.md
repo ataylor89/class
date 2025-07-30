@@ -808,7 +808,7 @@ If I did explain the steps, the process might change 6 months from now, or 1 yea
 
 I went through a process to create an account on AWS.
 
-I gave my root user email address, my acccount name, my debit card number.
+I gave my root user email address, my account name, my debit card number.
 
 Eventually I finished creating an account, and I was able to log into the AWS console.
 

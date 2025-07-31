@@ -1,5 +1,19 @@
 import time
 import argparse
+import os
+import pickle
+from datetime import date
+
+class Record(dict):
+    def __init__(self, lb, ub, pr, approx, te, n):
+        self["lb"] = lb
+        self["ub"] = ub
+        self["pr"] = pr
+        self["approx"] = approx
+        self["te"] = te
+        self["n"] = n
+        today = date.today()
+        self["timestamp"] = format("%d-%d-%d" %(today.year, today.month, today.day))
 
 def calculate(n):
     if n < 2 or n % 2 != 0:
@@ -31,8 +45,20 @@ def calculate(n):
     approx = float(lbs[0:k])
     return (lb, ub, k-1, approx)
 
+def load():
+    if os.path.exists("pi.pickle"):
+        with open("pi.pickle", "rb") as file:
+            return pickle.load(file)
+    return []
+
+def save(record):
+    records = load()
+    records.append(record)
+
+    with open("pi.pickle", "wb") as file:
+        pickle.dump(records, file)
+
 def main():
-    st = time.time()
     parser = argparse.ArgumentParser(
             prog="pi2.py",
             description="Calculate π using a Taylor series with n terms",
@@ -50,18 +76,24 @@ def main():
         print("Unable to parse n as a positive even integer")
         return
 
+    st = time.time()
     try:
         (lb, ub, pr, approx) = calculate(n)
     except ValueError as err:
         print(err)
         return
+    te = time.time() - st
 
     print("lb = %s" %str(lb))
     print("ub = %s" %str(ub))
     print(f"π = {approx:.{pr-1}f}")
     print("Precision: %d digits of precision" %pr)
     print("Method: We used a Taylor series with %s terms" %args.numberofterms)
-    print("Time elapsed: %f seconds" %(time.time() - st))
+    print("Time elapsed: %f seconds" %te)
+
+    if args.save:
+        record = Record(lb, ub, pr, approx, te, args.numberofterms)
+        save(record)
 
 if __name__ == "__main__":
     main()

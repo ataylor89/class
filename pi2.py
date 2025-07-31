@@ -45,17 +45,17 @@ def calculate(n):
     approx = float(lbs[0:k])
     return (lb, ub, k-1, approx)
 
-def load():
-    if os.path.exists("pi.pickle"):
-        with open("pi.pickle", "rb") as file:
+def load(filename="pi.pickle"):
+    if os.path.exists(filename):
+        with open(filename, "rb") as file:
             return pickle.load(file)
     return []
 
-def save(record):
+def save(record, filename="pi.pickle"):
     records = load()
     records.append(record)
 
-    with open("pi.pickle", "wb") as file:
+    with open(filename, "wb") as file:
         pickle.dump(records, file)
 
 def main():

@@ -831,3 +831,95 @@ So first I go to the signin link, *.signin.aws.amazon.com/console.
 Then I use my account ID (or alias), my IAM username, and my password to log into the console.
 
 Let's talk about the AWS console.
+
+## AWS console
+
+After I log into AWS using my account ID (or alias), my IAM username, and my password, I see the console.
+
+We can click on the AWS logo in the top left to reach the Console Home page.
+
+The Console Home page actually shows us the "Cost and usage", which is handy.
+
+My cost and usage this month is close to $200...
+
+I have to be careful in the future.
+
+I don't want to spend $200 a month on servers.
+
+So it's useful to know about the Console Home page because it shows us "Cost and usage".
+
+It's also useful to know about the search bar.
+
+The search bar is located on the top, to the right of the AWS logo.
+
+The way it currently looks for me is... from left to right, starting from the top left...
+
+AWS logo, a 3x3 grid of nine dots, and then the search bar.
+
+I use the search bar all the time.
+
+It's really useful to know about the search bar.
+
+I use the search bar to navigate different web services.
+
+For the current project we will be using the EC2 web service.
+
+EC2 stands for Elastic Compute Cloud.
+
+A lot of AWS web services have a number in their name.
+
+For example, S3 means "Simple Storage Service" and EC2 means "Elastic Compute Cloud".
+
+For the current project we will only be concerned with EC2.
+
+EC2 is the heart of AWS.
+
+EC2 lets us rent a server in the cloud.
+
+The server we rent is called an EC2 instance.
+
+We can choose an EC2 instance that has the CPU, memory, and disk space that we need.
+
+EC2 instances are identified by their instance type.
+
+One of the cheapest EC2 instances is the t2.micro.
+
+The EC2 instance that I have been using over the course of this week is called the c7a.xlarge.
+
+The C series is optimized for high performance computing.
+
+The C series is optimized for intensive computational workloads.
+
+I have been running pi2.py on a c7a.xlarge EC2 instance for over 40 hours now.
+
+I am calculating Pi using a Taylor series with 10**12 terms.
+
+I was able to do it for 10**11 terms in about 4 hours.
+
+But the current program has been running for over 40 hours.
+
+It is taking over 40 hours to compute Pi using a Taylor series with 10**12 terms.
+
+So listen.
+
+We talked about AWS console.
+
+We talked about the Console Home page which shows you Cost and usage.
+
+We talked about the search bar, which I use all the time.
+
+The search bar helps us navigate AWS web services and open different web services.
+
+We talked about the EC2 web service, which is the heart of AWS.
+
+EC2 means Elastic Compute Cloud.
+
+We can talk about EC2 more in detail.
+
+We can talk about the steps for renting a server using EC2.
+
+That's what cloud computing is.
+
+Cloud computing lets us rent a server in the cloud.
+
+Now let's talk about the EC2 Amazon web service in more detail.

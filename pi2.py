@@ -29,7 +29,7 @@ def calculate(n):
         raise ValueError("n is too small")
 
     approx = float(lbs[0:k])
-    return (lb, ub, approx)
+    return (lb, ub, k-1, approx)
 
 def main():
     st = time.time()
@@ -51,17 +51,15 @@ def main():
         return
 
     try:
-        (lb, ub, approx) = calculate(n)
+        (lb, ub, pr, approx) = calculate(n)
     except ValueError as err:
         print(err)
         return
 
-    k = len(str(approx))
-
     print("lb = %s" %str(lb))
     print("ub = %s" %str(ub))
-    print(f"π = {approx:.{k-2}f}")
-    print("Precision: %d digits of precision" %(k-1))
+    print(f"π = {approx:.{pr-1}f}")
+    print("Precision: %d digits of precision" %pr)
     print("Method: We used a Taylor series with %s terms" %args.numberofterms)
     print("Time elapsed: %f seconds" %(time.time() - st))
 

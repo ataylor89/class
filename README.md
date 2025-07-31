@@ -914,7 +914,7 @@ We talked about the EC2 web service, which is the heart of AWS.
 
 EC2 means Elastic Compute Cloud.
 
-We can talk about EC2 more in detail.
+We can talk about EC2 in more detail.
 
 We can talk about the steps for renting a server using EC2.
 

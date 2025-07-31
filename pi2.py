@@ -4,8 +4,10 @@ import os
 import pickle
 from datetime import date
 
+records = []
+
 class Record(dict):
-    def __init__(self, lb, ub, pr, approx, te, n):
+    def __init__(self, lb, ub, pr, approx, te, n, hw):
         self["lower_bound"] = lb
         self["upper_bound"] = ub
         self["precision"] = pr
@@ -13,7 +15,9 @@ class Record(dict):
         self["time_elapsed"] = format("%f seconds" %te)
         self["number_of_terms"] = n
         today = date.today()
-        self["timestamp"] = format("%d-%d-%d" %(today.year, today.month, today.day))
+        self["date"] = format("%d-%d-%d" %(today.year, today.month, today.day))
+        if hw:
+            self["hardware"] = hw
 
 def calculate(n):
     if n < 2 or n % 2 != 0:
@@ -48,15 +52,13 @@ def calculate(n):
 def load(filename="pi.pickle"):
     if os.path.exists(filename):
         with open(filename, "rb") as file:
-            return pickle.load(file)
-    return []
+            records.clear()
+            records.extend(pickle.load(file))
 
-def save(record, filename="pi.pickle"):
-    records = load()
-    records.append(record)
-
-    with open(filename, "wb") as file:
-        pickle.dump(records, file)
+def save(filename="pi.pickle"):
+    if len(records) > 0:
+        with open(filename, "wb") as file:
+            pickle.dump(records, file)
 
 def main():
     parser = argparse.ArgumentParser(
@@ -66,6 +68,7 @@ def main():
 
     parser.add_argument("-n", "--numberofterms", required=True)
     parser.add_argument("-s", "--save", action="store_true")
+    parser.add_argument("-hw", "--hardware")
 
     args = parser.parse_args()
 
@@ -92,8 +95,9 @@ def main():
     print("Time elapsed: %f seconds" %te)
 
     if args.save:
-        record = Record(lb, ub, pr, approx, te, args.numberofterms)
-        save(record)
+        load()
+        records.append(Record(lb, ub, pr, approx, te, args.numberofterms, args.hardware))
+        save()
 
 if __name__ == "__main__":
     main()

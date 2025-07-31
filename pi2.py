@@ -6,12 +6,12 @@ from datetime import date
 
 class Record(dict):
     def __init__(self, lb, ub, pr, approx, te, n):
-        self["lb"] = lb
-        self["ub"] = ub
-        self["pr"] = pr
-        self["approx"] = approx
-        self["te"] = format("%f seconds" %te)
-        self["n"] = n
+        self["lower_bound"] = lb
+        self["upper_bound"] = ub
+        self["precision"] = pr
+        self["approximation"] = approx
+        self["time_elapsed"] = format("%f seconds" %te)
+        self["number_of_terms"] = n
         today = date.today()
         self["timestamp"] = format("%d-%d-%d" %(today.year, today.month, today.day))
 

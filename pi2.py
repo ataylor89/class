@@ -10,7 +10,7 @@ class Record(dict):
         self["ub"] = ub
         self["pr"] = pr
         self["approx"] = approx
-        self["te"] = te
+        self["te"] = format("%f seconds" %te)
         self["n"] = n
         today = date.today()
         self["timestamp"] = format("%d-%d-%d" %(today.year, today.month, today.day))

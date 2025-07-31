@@ -25,6 +25,9 @@ def calculate(n):
         k += 1
     k -= 1
 
+    if k == 0:
+        raise ValueError("n is too small")
+
     approx = float(lbs[0:k])
     return (lb, ub, approx)
 
@@ -44,9 +47,15 @@ def main():
         n = int(float(args.numberofterms))
         assert n >= 2 and n % 2 == 0
     except:
-        raise ValueError("Unable to parse n as a positive even integer")
+        print("Unable to parse n as a positive even integer")
+        return
 
-    (lb, ub, approx) = calculate(n)
+    try:
+        (lb, ub, approx) = calculate(n)
+    except ValueError as err:
+        print(err)
+        return
+
     k = len(str(approx))
 
     print("lb = %s" %str(lb))

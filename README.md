@@ -37,7 +37,7 @@ The Python Standard Library is a set of built-in libraries that are pre-installe
 
 For example, the math library is pre-installed. The sys and random libraries are preinstalled.
 
-We can downlaod the sympy library by typing "pip install sympy" in Terminal.
+We can download the sympy library by typing "pip install sympy" in Terminal.
 
 (I'm using a MacBook so I reference Terminal often.)
 
